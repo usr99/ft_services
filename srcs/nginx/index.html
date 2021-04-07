@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title> NGINX page </title>
+	</head>
+
+	<body>
+		
+		<button onclick="window.location.href = 'wordpress';" title="Va voir ma page wordpress !"> Aller sur wordpress </button>
+		<button onclick="window.location.href = 'phpmyadmin';" target="_blank" title="Va voir ma page phpMyAdmin !"> Aller sur phpMyAdmin </button>
+
+		<style>
+			body
+			{
+				background-color: rgb(25, 42, 86);
+			}
+
+			button
+			{
+				width: 50%;
+				height: 6vh;
+				margin-top: 3%;
+				margin-left: 25%;
+
+				box-shadow: 7px 7px 0px 0px rgba(0,0,0,0.6);
+				border: none;
+				border-radius: 30px 30px;
+				font-size: 2.1em;
+				font-family: monospace;
+				background-color: rgb(39, 60, 117);
+				outline: none;
+				color: rgb(12, 21, 43);
+			}
+
+			button:hover
+			{
+				transform: scale(1.01);
+			}
+
+			button:active
+			{
+				transform: scale(0.99);
+			}
+
+		</style>
+	</body>
+</html>

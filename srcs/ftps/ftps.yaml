@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ftps-depl
+  labels:
+    app: ftps
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ftps
+  template:
+    metadata:
+      labels:
+        app: ftps
+    spec:
+      containers:
+      - name: ftps
+        image: ftps
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 21
+        volumeMounts:
+        - mountPath: /home/ftp-user/
+          name: ftps-storage
+      volumes:
+      - name: ftps-storage
+        hostPath: 
+          path: /ftps_data
+          type: DirectoryOrCreate
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ftps-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: ftps
+  ports:
+    - protocol: TCP
+      port: 21
+      targetPort: 21
+      nodePort: 21
