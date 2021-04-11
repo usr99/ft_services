@@ -1,14 +1,11 @@
 FROM alpine:3.13.4
 
 RUN apk update && apk upgrade						\
-	&& apk add nano mariadb mariadb-client openrc
+	&& apk add nano mariadb mariadb-client openrc telegraf
 
-COPY wordpress.sql .
+# Copy init script
 COPY init.sh .
 RUN chmod +x init.sh
 
-#RUN openrc							\
-#	&& touch /run/openrc/softlevel	\
-#	&& rc-update add mariadb
-
-#CMD ./init.sh
+# Launch init script
+CMD ./init.sh

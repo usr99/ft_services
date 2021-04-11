@@ -42,3 +42,11 @@ spec:
       port: 21
       targetPort: 21
       nodePort: 21
+    - protocol: TCP
+      port: 20
+      targetPort: 20
+      nodePort: 20
+    - protocol: TCP
+      port: 990
+      targetPort: 990
+      nodePort: 990

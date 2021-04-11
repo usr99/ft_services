@@ -7,8 +7,6 @@
 -- Version du serveur :  10.5.8-MariaDB
 -- Version de PHP :  7.4.15
 
-use wordpress;
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
