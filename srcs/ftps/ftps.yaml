@@ -20,13 +20,26 @@ spec:
         imagePullPolicy: Never
         ports:
         - containerPort: 21
+        - containerPort: 21000
+        - containerPort: 21001
         volumeMounts:
         - mountPath: /home/ftp-user/
           name: ftps-storage
+        - mountPath: /var/log/
+          name: ftps-log
+        env:
+          - name: PASV_IP
+            valueFrom:
+              fieldRef:
+                fieldPath: status.hostIP
       volumes:
       - name: ftps-storage
         hostPath: 
           path: /ftps_data
+          type: DirectoryOrCreate
+      - name: ftps-log
+        hostPath: 
+          path: /ftps_log
           type: DirectoryOrCreate
 ---
 apiVersion: v1
@@ -38,15 +51,15 @@ spec:
   selector:
     app: ftps
   ports:
-    - protocol: TCP
+    - name: ftp
       port: 21
       targetPort: 21
       nodePort: 21
-    - protocol: TCP
-      port: 20
-      targetPort: 20
-      nodePort: 20
-    - protocol: TCP
-      port: 990
-      targetPort: 990
-      nodePort: 990
+    - name: pasv-min
+      port: 21000
+      targetPort: 21000
+      nodePort: 21000
+    - name: pasv-max
+      port: 21001
+      targetPort: 21001
+      nodePort: 21001

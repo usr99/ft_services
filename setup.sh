@@ -1,7 +1,7 @@
 echo "\033[32;01m#### FT_SERVICES SETUP ####\033[00m"
 
 # launch minikube cluster
-minikube start --extra-config=apiserver.service-node-port-range=1-6000
+minikube start --extra-config=apiserver.service-node-port-range=1-25000
 minikube addons enable dashboard
 eval $(minikube docker-env)
 
@@ -40,4 +40,4 @@ kubectl apply -f srcs/telegraf/telegraf.yaml
 echo "\033[32;01m#### Launch K8S Dashboard ####\033[00m"
 
 # deploy dashboard
-minikube dashboard
+minikube dashboard & sleep 12
