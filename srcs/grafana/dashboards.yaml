@@ -3,9 +3,10 @@ apiVersion: 1
 
 providers:
  - name: 'InfluxDB'
-   orgId: 1
-   folder: ''
+   folder: 'ft_services'
    folderUid: ''
-   type: file
+   disableDeletion: true
+   updateIntervalSeconds: 10
+   allowUiUpdates: true
    options:
-     path: /var/lib/grafana-dashboards
+     path: /var/lib/grafana/dashboards

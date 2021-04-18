@@ -1,7 +1,7 @@
 FROM alpine:3.13.4
 
 RUN apk update && apk upgrade	\
-	&& apk add nginx nano openssl telegraf
+	&& apk add nginx nano openssl
 
 # Give ownership to nginx user
 RUN chown -R nginx:www-data var/www/*

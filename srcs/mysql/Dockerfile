@@ -1,7 +1,7 @@
 FROM alpine:3.13.4
 
 RUN apk update && apk upgrade						\
-	&& apk add nano mariadb mariadb-client openrc telegraf
+	&& apk add nano mariadb mariadb-client openrc
 
 # Copy init script
 COPY init.sh .

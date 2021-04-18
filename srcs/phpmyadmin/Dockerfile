@@ -1,7 +1,7 @@
 FROM alpine:3.13.4
 
-RUN apk update && apk upgrade					\
-	&& apk add nginx nano wget openssl telegraf	\
+RUN apk update && apk upgrade			\
+	&& apk add nginx nano wget openssl	\
 	&& apk add php7 php7-fpm php7-session php7-mbstring php7-mysqli php7-json php7-zlib php7-opcache php7-curl php7-gd
 
 # Give ownership to nginx user

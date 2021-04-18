@@ -108,7 +108,7 @@
 			  {
 				"key": "io.kubernetes.container.name",
 				"operator": "=",
-				"value": "mysql"
+				"value": "phpmyadmin"
 			  }
 			]
 		  }
@@ -244,7 +244,7 @@
 			  {
 				"key": "io.kubernetes.container.name",
 				"operator": "=",
-				"value": "mysql"
+				"value": "phpmyadmin"
 			  }
 			]
 		  }
@@ -380,7 +380,7 @@
 			  {
 				"key": "io.kubernetes.container.name",
 				"operator": "=",
-				"value": "mysql"
+				"value": "phpmyadmin"
 			  }
 			]
 		  },
@@ -412,7 +412,7 @@
 			  {
 				"key": "io.kubernetes.container.name",
 				"operator": "=",
-				"value": "mysql"
+				"value": "phpmyadmin"
 			  }
 			]
 		  }
@@ -472,7 +472,7 @@
 	},
 	"timepicker": {},
 	"timezone": "",
-	"title": "mysql",
-	"uid": "HI68yZXGd",
+	"title": "phpmyadmin",
+	"uid": "HI68yZXGe",
 	"version": 15
   }

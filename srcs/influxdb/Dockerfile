@@ -1,7 +1,7 @@
 FROM alpine:3.13.4
 
 RUN apk update && apk upgrade				\
-	&& apk add nano influxdb telegraf
+	&& apk add nano influxdb
 
 RUN mkdir /etc/influxdb								\
 	&& influxd config > /etc/influxdb/influxdb.conf	\
