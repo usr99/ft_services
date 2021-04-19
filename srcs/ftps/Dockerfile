@@ -1,7 +1,7 @@
 FROM alpine:3.13.4
 
 RUN apk update && apk upgrade				\
-	&& apk add nano vsftpd openssl
+	&& apk add nano vsftpd openssl openrc
 
 # vsFTPd configuration file
 COPY vsftpd.conf /etc/vsftpd.conf

@@ -32,6 +32,13 @@ spec:
             valueFrom:
               fieldRef:
                 fieldPath: status.hostIP
+        livenessProbe:
+          exec:
+            command:
+            - pidof
+            - vsftpd
+          initialDelaySeconds: 5
+          periodSeconds: 5
       volumes:
       - name: ftps-storage
         hostPath: 
