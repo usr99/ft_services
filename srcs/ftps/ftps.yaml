@@ -25,28 +25,15 @@ spec:
         volumeMounts:
         - mountPath: /home/ftp-user/
           name: ftps-storage
-        - mountPath: /var/log/
-          name: ftps-log
         env:
           - name: PASV_IP
             valueFrom:
               fieldRef:
                 fieldPath: status.hostIP
-        livenessProbe:
-          exec:
-            command:
-            - pidof
-            - vsftpd
-          initialDelaySeconds: 5
-          periodSeconds: 5
       volumes:
       - name: ftps-storage
         hostPath: 
           path: /ftps_data
-          type: DirectoryOrCreate
-      - name: ftps-log
-        hostPath: 
-          path: /ftps_log
           type: DirectoryOrCreate
 ---
 apiVersion: v1
