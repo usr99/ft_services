@@ -1,7 +1,7 @@
 echo "\033[32;01m#### FT_SERVICES SETUP ####\033[00m"
 
 # launch minikube cluster
-minikube start --extra-config=apiserver.service-node-port-range=1-25000
+minikube start --extra-config=apiserver.service-node-port-range=1-25000 --driver=docker
 minikube addons enable dashboard
 eval $(minikube docker-env)
 
